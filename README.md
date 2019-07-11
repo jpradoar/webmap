@@ -34,8 +34,7 @@ $ mkdir /tmp/webmap
 $ docker run -d --name webmap -h webmap -p 8000:8000 -v /tmp/webmap:/opt/xml webmap
 
 ## PULL IMAGE
-$ mkdir /tmp/webmap
-$ docker run -d --name webmap -h webmap -p 8000:8000 -v /tmp/webmap:/opt/xml jpradoar/nmapweb 
+$ mkdir /tmp/webmap && docker run -d --name webmap -h webmap -p 8000:8000 -v /tmp/webmap:/opt/xml jpradoar/nmapweb:0.1
 
 $ # now you can run Nmap and save the XML Report on /tmp/webmap
 $ sudo nmap -sT -sV -O  -A -T4 --version-all --version-intensity 9 -oX /tmp/webmap/url.com_.xml url.com
